@@ -1,4 +1,4 @@
-package com.ayush.Hospital_Management_System_Spring_boot.config; // Check your package name!
+package com.ayush.Hospital_Management_System_Spring_boot.WebConfig; // Check your package name!
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

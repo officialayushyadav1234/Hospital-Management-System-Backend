@@ -1,4 +1,4 @@
-package com.ayush.Hospital_Management_System_Spring_boot.WebConfig; // Check your package name!
+package com.ayush.Hospital_Management_System_Spring_boot.WebConfig;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -9,14 +9,12 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**") // Allow all endpoints
-                .allowedOrigins(
-                    "http://localhost:5173", // For your local testing
-                    "https://hospital-management-system-frontend-lovat.vercel.app", // Your Vercel App
-                    "https://hospital-management-system-frontend-git-main-officialayushyadav1234.vercel.app" // Alternative Vercel link
-                )
-                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Allow these actions
+        registry.addMapping("/**")
+                // USE THIS INSTEAD OF allowedOrigins
+                // This allows Vercel, Localhost, and any other future link automatically.
+                .allowedOriginPatterns("*") 
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
-                .allowCredentials(true); // Important for some browsers
+                .allowCredentials(true);
     }
 }
